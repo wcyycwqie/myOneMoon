@@ -8,6 +8,7 @@ import less from 'less'
 import $ from 'jquery'
 
 // 静态资源
+// import '../static/css/'
 import '../static/images/icon/iconpack2/iconfont.css'
 import '../static/images/icon/iconpack2/iconfont'
 import '../static/bootstrap-3.3.7/dist/css/bootstrap.css'

@@ -26,11 +26,16 @@
           </li>
         </ul>
         <ul class="top-nav-login nav nav-pills">
-          <li role="presentation" class="active">
-            <router-link :to="{ name: 'root' }">Home</router-link>
+          <li role="presentation" class="">
+            <a href="">
+              <span class="icon iconfont">&#xe6b6;</span>
+            </a>
           </li>
           <li role="presentation" class="">
-            <router-link :to="{ name: 'myGame' }">Game</router-link>
+            <a href="#"> <span class="icon iconfont">&#xe6af;</span>登录</a>
+          </li>
+          <li role="presentation" class="">
+            <a href="#"> <span class="icon iconfont">&#xe664;</span> 注册</a>
           </li>
         </ul>
       </div>
@@ -74,7 +79,6 @@ export default {
   position: relative;
   #top-nav-main,
   .top-nav-login {
-    
     > li {
       > a {
         padding: 10px 20px;
@@ -88,11 +92,20 @@ export default {
         background: linear-gradient(30deg, @navColorOne, transparent);
       }
     }
-	}
-	.top-nav-main {
-		margin-left: 100px;
+  }
+  .top-nav-main {
+    margin-left: 100px;
     background: none;
-	}
+  }
+  .top-nav-login{
+    li {
+      a{
+        >.icon{
+          margin-right: 10px;
+        }
+      }
+    }
+  }
 }
 </style>
 

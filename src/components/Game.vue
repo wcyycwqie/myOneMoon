@@ -23,15 +23,9 @@
 </template>
 
 <script>
-import $ from 'jquery'
-$(function () {
-  console.log('hohohoho')
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
-})
-
 import myCarousel from './Carousel'
+import $ from 'jquery'
+
 export default {
   name: 'Game',
   components: {
@@ -41,6 +35,10 @@ export default {
     return {
       num: '1'
     }
+  },
+  mounted () {
+    console.log('Game Start')
+    $('[data-toggle="tooltip"]').tooltip()
   },
   methods: {
   }
