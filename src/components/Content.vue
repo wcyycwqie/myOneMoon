@@ -1,16 +1,16 @@
 <template>
 	<div class="content">
 		<div>
-			<div class="layui-container">
-				<div class="layui-row contentBlock contentBg" style="">
+			<div class="container">
+				<div class="row contentBlock contentBg" style="">
 					<div class="content-title">
 						<h2><b>Welcome</b></h2>
 						<p>Here, you will find somethings which are fun and interesting</p>
 						<p>I hope you will enjoy it, have fun! </p>
 					</div>
 				</div>
-				<div class="layui-row contentBlock contentBgTwo">
-					<div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+				<div class="row contentBlock contentBgTwo">
+					<div class="col-xs-12 col-sm-12 col-md-4">
 						<div class="smallBox">
 							<a href="/#"><img src="../../static/images/flowers/23.png" alt="" height="270px" width="340px"></a>
 							<span class="smallBox-tips">
@@ -18,13 +18,13 @@
 							</span>
 						</div>
 					</div>
-					<div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+					<div class="col-xs-12 col-sm-6 col-md-4">
 						<div class="smallBox">
 							<a href="/#"><img src="../../static/images/flowers/25.png" alt="" height="270px" width="340px"></a>
 							<span class="smallBox-tips">news</span>
 						</div>
 					</div>
-					<div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+					<div class="col-xs-12 col-sm-6 col-md-4">
 						<div class="smallBox">
 							<a href="/#"><img src="../../static/images/flowers/22.png" alt="" height="270px" width="340px"></a>
 							<span class="smallBox-tips">news</span>
@@ -84,7 +84,7 @@ export default {
 		/*color: #EE5500AA;*/
 	}
 	.smallBox{
-		margin-top:30px;
+		margin:30px 0;
 	}
 	.smallBox .smallBox-tips{
 		margin-top: 15px;
