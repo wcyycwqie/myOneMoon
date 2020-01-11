@@ -6,7 +6,7 @@
           <img src="../../static/images/icon/moon.png" alt="Moon" />
         </a>
         <ul id="top-nav-main" class="top-nav-main nav nav-pills">
-          <li role="presentation" class="active">
+          <li role="presentation" class="active" :title="$route.name">
             <router-link :to="{ name: 'root' }">Home</router-link>
           </li>
           <li role="presentation" class="">
@@ -66,6 +66,17 @@ export default {
   },
   methods: {
     testClick () { }
+  },
+  watch: {
+    '$route' () {
+      // 获取当前路径
+      let path = this.$route.path
+      // 检索当前路径
+      console.log('******************************')
+      console.log(path)
+      // this.checkRouterLocal(path)
+
+    }
   }
 }
 
@@ -97,10 +108,10 @@ export default {
     margin-left: 100px;
     background: none;
   }
-  .top-nav-login{
+  .top-nav-login {
     li {
-      a{
-        >.icon{
+      a {
+        > .icon {
           margin-right: 10px;
         }
       }
