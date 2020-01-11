@@ -11,12 +11,12 @@
             class=""
             v-for="(items, index) in nav"
             :key="index"
-            :title="tempFlag"
+            :class="navIndex === index ? 'active' : ''"
           >
-            <router-link :to="{ path: items.path }">{{
+            <!-- <router-link :to="{ path: items.path }">{{
               items.title
-            }}</router-link>
-            <!-- <a @click="routerLink(index, item.path)" href="javascript:;">{{items.title}}</a> -->
+            }}</router-link> -->
+            <a @click="routerLink(index, items.path)">{{ items.title }}</a>
           </li>
         </ul>
         <ul class="top-nav-login nav nav-pills">
@@ -43,7 +43,7 @@ $(function () {
   $('#top-nav-main a, .top-nav-login').click(function (e) {
     console.log($(this))
     e.preventDefault()
-    // $(this).tab('show')
+    $(this).tab('show')
   })
 })
 
@@ -59,15 +59,24 @@ export default {
         { title: 'Music', path: '' },
         { title: 'Community', path: '' }
       ],
-      tempFlag: this.$route.path
+      navIndex: 0
     }
   },
   mounted () {
     console.log('HEAD')
-    console.log(this.$route.path)
+    this.checkRouterLocal(this.$route.path)
   },
   methods: {
-    testClick () { }
+    routerLink (index, path) {
+      // 点击哪个路由就赋值给自定义的下标
+      this.navIndex = index
+      // 路由跳转
+      this.$router.push(path)
+    },
+    checkRouterLocal (path) {
+      // 查找当前路由的下标
+      this.navIndex = this.nav.findIndex(item => item.path === path)
+    }
   },
   watch: {
     '$route' () {
@@ -76,7 +85,7 @@ export default {
       console.log('------------------------')
       console.log(path)
       // 检索当前路径
-      // this.checkRouterLocal(path)
+      this.checkRouterLocal(path)
     }
   }
 }
@@ -96,9 +105,10 @@ export default {
         padding: 10px 20px;
         line-height: 40px;
         transition: all 0.3s;
+        cursor: pointer;
       }
       &.active > a,
-      // > a.router-link-exact-active,
+      > a.router-link-exact-active,
       > a:hover,
       > a:focus {
         color: #fff;
