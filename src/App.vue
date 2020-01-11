@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <my-header></my-header>
-    <router-view name='main'></router-view>
+    <transition>
+      <router-view name="main"></router-view>
+    </transition>
   </div>
 </template>
 
@@ -26,7 +28,13 @@ export default {
   color: #2c3e50;
   /*margin-top: 60px;*/
 }
-body,div,span,a,p,ul,li {
+body,
+div,
+span,
+a,
+p,
+ul,
+li {
   margin: 0;
   padding: 0;
 }

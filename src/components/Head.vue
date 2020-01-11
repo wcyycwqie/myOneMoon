@@ -6,23 +6,17 @@
           <img src="../../static/images/icon/moon.png" alt="Moon" />
         </a>
         <ul id="top-nav-main" class="top-nav-main nav nav-pills">
-          <li role="presentation" class="active">
-            <router-link :to="{ name: 'root' }">Home</router-link>
-          </li>
-          <li role="presentation" class="">
-            <router-link :to="{ name: 'myGame' }">Game</router-link>
-          </li>
-          <li role="presentation" class="">
-            <router-link :to="{ name: 'myAnimation' }">Animation</router-link>
-          </li>
-          <li role="presentation" class="">
-            <a href="#">Music</a>
-          </li>
-          <li role="presentation" class="">
-            <a href="#">Other</a>
-          </li>
-          <li role="presentation" class="">
-            <a href="#">Community</a>
+          <li
+            role="presentation"
+            class=""
+            v-for="(items, index) in nav"
+            :key="index"
+            :title="tempFlag"
+          >
+            <router-link :to="{ path: items.path }">{{
+              items.title
+            }}</router-link>
+            <!-- <a @click="routerLink(index, item.path)" href="javascript:;">{{items.title}}</a> -->
           </li>
         </ul>
         <ul class="top-nav-login nav nav-pills">
@@ -49,8 +43,7 @@ $(function () {
   $('#top-nav-main a, .top-nav-login').click(function (e) {
     console.log($(this))
     e.preventDefault()
-    $(this).parent().addClass('active').siblings('li').removeClass('active')
-    $(this).tab('show')
+    // $(this).tab('show')
   })
 })
 
@@ -58,14 +51,33 @@ export default {
   name: 'myHeader',
   data () {
     return {
-      hello: 'hahaha'
+      hello: 'hahaha',
+      nav: [
+        { title: 'Home', path: '/' },
+        { title: 'Game', path: '/game' },
+        { title: 'Animation', path: '/animation' },
+        { title: 'Music', path: '' },
+        { title: 'Community', path: '' }
+      ],
+      tempFlag: this.$route.path
     }
   },
   mounted () {
-
+    console.log('HEAD')
+    console.log(this.$route.path)
   },
   methods: {
     testClick () { }
+  },
+  watch: {
+    '$route' () {
+      // 获取当前路径
+      let path = this.$route.path
+      console.log('------------------------')
+      console.log(path)
+      // 检索当前路径
+      // this.checkRouterLocal(path)
+    }
   }
 }
 
@@ -86,6 +98,7 @@ export default {
         transition: all 0.3s;
       }
       &.active > a,
+      // > a.router-link-exact-active,
       > a:hover,
       > a:focus {
         color: #fff;
@@ -97,10 +110,10 @@ export default {
     margin-left: 100px;
     background: none;
   }
-  .top-nav-login{
+  .top-nav-login {
     li {
-      a{
-        >.icon{
+      a {
+        > .icon {
           margin-right: 10px;
         }
       }

@@ -1,5 +1,5 @@
 <template>
-	<div class="content">
+	<div class="Content">
 		<div>
 			<div class="container">
 				<div class="row contentBlock contentBg" style="">
@@ -38,7 +38,7 @@
 
 <script>
 export default {
-	name: 'content',
+	name: 'Content',
 	data () {
 		return {
 

@@ -86,7 +86,7 @@ export default {
     }
   },
   mounted () {
-    console.log('start')
+    console.log('Carousel start')
     console.log('*********************')
     console.log(this.Carousel)
 
