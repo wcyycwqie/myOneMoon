@@ -87,9 +87,7 @@ export default {
   },
   mounted () {
     console.log('Carousel start')
-    console.log('*********************')
     console.log(this.Carousel)
-
     $('#carousel-main').carousel({
       interval: 5000
     })

@@ -14,10 +14,20 @@
           data-toggle="tooltip"
           data-placement="left"
           title="Tooltip on left"
+          @click="getInfo"
         >
-          Tooltip on left
+          GetInfo
         </button>
       </div>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          v-for="item in heroinfos"
+          :key="item.id"
+        >
+        {{item.name}}
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -33,7 +43,8 @@ export default {
   },
   data () {
     return {
-      num: '1'
+      num: '1',
+      heroinfos: []
     }
   },
   mounted () {
@@ -41,6 +52,17 @@ export default {
     $('[data-toggle="tooltip"]').tooltip()
   },
   methods: {
+    getInfo () {
+      console.log('获取信息')
+      // console.log(this.$axios)
+      this.$axios({
+        'method': 'get',
+        'url': ' http://localhost:3888/info'
+      }).then(res => {
+        console.log(res)
+        this.heroinfos = res.data
+      })
+    }
   }
 }
 </script>
