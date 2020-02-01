@@ -4,17 +4,21 @@
     <transition>
       <router-view name="main"></router-view>
     </transition>
+    <!-- <router-view name="main"></router-view> -->
+    <myFooter></myFooter>
   </div>
 </template>
 
 <script>
 import myHeader from './components/Head'
 import myContent from './components/Content'
+import myFooter from './components/footer'
 
 export default {
   name: 'app',
   components: {
-    myHeader
+    myHeader,
+    myFooter
   }
 }
 </script>

@@ -4,10 +4,11 @@
 			<myCarousel Carousel="Home"></myCarousel>
 			<myContent></myContent>
 		</div>
-		<div>
+		<!-- <div>
 			<router-link :to="{name: 'myGame'}"><h2 style="text-align: center;">run to Game world</h2></router-link>
 			<router-link :to="{name: 'myAnimation'}"><h2 style="text-align: center;">run to Animation world</h2></router-link>
-		</div>
+			<router-link to="/animation/123"><h2 style="text-align: center;">run to Animation List</h2></router-link>
+		</div> -->
 	</div>
 </template>
 

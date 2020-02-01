@@ -89,7 +89,7 @@ export default {
     console.log('Carousel start')
     console.log(this.Carousel)
     $('#carousel-main').carousel({
-      interval: 5000
+      interval: 3000
     })
     this.imgRandom()
   },
@@ -97,11 +97,11 @@ export default {
   },
   methods: {
     imgRandom () {
-      let imgSrc = '../../static/images/flowers/'
+      let imgSrc = '/static/images/flowers/'
       let imgNum = [1, 2, 3, 4, 5]
       let imgArrLen = 5
-      let imgMax = (this.Carousel === 'Game' && 12) || 52
-      imgSrc = (this.Carousel === 'Game' && '../../static/images/dota2/carousel/') || '../../static/images/flowers/'
+      let imgMax = (this.Carousel === 'Game' && 42) || 52
+      imgSrc = (this.Carousel === 'Game' && '/static/images/game/carousel/') || '/static/images/flowers/'
       // 图片随机函数
       let randomNum = (n, max) => {
         let arr = []

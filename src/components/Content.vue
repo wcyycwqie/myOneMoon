@@ -9,12 +9,25 @@
             <p>I hope you will enjoy it, have fun!</p>
           </div>
         </div>
+        <div class="row veidoArea">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <video src="//player.bilibili.com/player.html?aid=85576992&cid=146361395&page=1" width="100%" height="">
+              您的浏览器不支持Video标签。
+            </video>
+            <iframe src="//player.bilibili.com/player.html?aid=85576992&cid=146361395&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:760px;"> </iframe>
+            <!-- <video src="blob:https://www.bilibili.com/7ef8a828-fcd7-4539-99d2-54264dcb69e5" width="100%" height="">
+              <source src="blob:https://www.bilibili.com/7ef8a828-fcd7-4539-99d2-54264dcb69e5" type="video/mp4">
+              <source src="blob:https://www.bilibili.com/7ef8a828-fcd7-4539-99d2-54264dcb69e5" type="video/webm">
+              您的浏览器不支持Video标签。
+            </video> -->
+          </div>
+        </div>
         <div class="row contentBlock contentBgTwo">
           <div class="col-xs-12 col-sm-12 col-md-4">
             <div class="smallBox">
               <a href="/#"
                 ><img
-                  src="../../static/images/flowers/23.png"
+                  src="/static/images/flowers/23.png"
                   alt=""
                   height="270px"
                   width="340px"
@@ -31,7 +44,7 @@
             <div class="smallBox">
               <a href="/#"
                 ><img
-                  src="../../static/images/flowers/25.png"
+                  src="/static/images/flowers/25.png"
                   alt=""
                   height="270px"
                   width="340px"
@@ -43,19 +56,35 @@
             <div class="smallBox">
               <a href="/#"
                 ><img
-                  src="../../static/images/flowers/22.png"
+                  src="/static/images/flowers/22.png"
                   alt=""
                   height="270px"
                   width="340px"
               /></a>
               <span class="smallBox-tips">news</span>
             </div>
-            z
           </div>
         </div>
-        <div class="row ">
-          <div class="col-xs-12 col-sm-6 col-md-6"></div>
-          <div class="col-xs-12 col-sm-6 col-md-6"></div>
+        <div class="row favorArea">
+          <div class="page-header">
+            <h1>My Favor <small></small></h1>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <span>
+              <div>
+                <img src="/static/images/flowers/12.png" alt="" />
+              </div>
+              <div></div>
+            </span>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <span>
+              <div>
+                <img src="/static/images/flowers/16.png" alt="" />
+              </div>
+              <div></div>
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -75,6 +104,14 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+.favorArea {
+  img {
+    width: 100%;
+    height: 380px;
+  }
+}
+</style>
 <style>
 * {
   margin: 0;
@@ -87,6 +124,7 @@ h3,
 h4,
 h5,
 h6,
+p,
 b {
   color: #fff;
 }

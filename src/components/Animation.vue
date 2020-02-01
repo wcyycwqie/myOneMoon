@@ -3,6 +3,9 @@
 		<div>
 			<h1 style="text-align: center;">Animation?</h1>
 		</div>
+		<div>
+			<p>ID: {{$route.params.id}}</p>
+		</div>
 	</div>
 </template>
 

@@ -7,6 +7,7 @@ import myAnimation from '@/components/Animation'
 
 Vue.use(Router)
 
+// 配置路由
 export default new Router({
   mode: 'history',
   routes: [{
@@ -23,12 +24,21 @@ export default new Router({
         main: myGame
       }
     },
+    // {
+    //   path: '/animation/',
+    //   name: 'myAnimation',
+    //   components: {
+    //     main: myAnimation
+    //   }
+    // },
     {
-      path: '/animation',
+      path: '/animation/',
       name: 'myAnimation',
-      components: {
-        main: myAnimation
-      }
+      component: myAnimation
+    },
+    {
+      path: '*',
+      redirect: '/' // redirect 路由重定向
     }
   ]
 })
