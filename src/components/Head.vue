@@ -96,6 +96,26 @@ export default {
 @import url('../../static/css/myStyle.less');
 
 @navColorOne: #b51574;
+.top-nav {
+  /* 超小屏幕（手机，小于 768px） */
+  /* 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） */
+  display: none;
+
+  /* 小屏幕（平板，大于等于 768px） */
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  /* 中等屏幕（桌面显示器，大于等于 992px） */
+  @media (min-width: 992px) {
+    display: block;
+  }
+
+  /* 大屏幕（大桌面显示器，大于等于 1200px） */
+  @media (min-width: 1200px) {
+    display: block;
+  }
+}
 #top-nav {
   position: relative;
   #top-nav-main,

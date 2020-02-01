@@ -2,7 +2,7 @@
   <div class="Footer">
     <div class="footer-copy container-fluid">
       <div>
-        <h1>Happy new year 2020 !</h1>
+        <h1>Happy new year <i>2020 !</i></h1>
       </div>
     </div>
   </div>
@@ -26,6 +26,9 @@ export default {
   color: red;
   h1 {
     color: #337ab7;
+  }
+  i {
+    color: #F00;
   }
 }
 </style>

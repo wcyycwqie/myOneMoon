@@ -9,6 +9,7 @@ yarn-error.log*
 selenium-debug.log
 /static/images/flowers
 package-lock.json
+/static/video
 
 # Editor directories and files
 .idea

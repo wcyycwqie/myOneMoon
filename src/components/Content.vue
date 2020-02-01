@@ -11,15 +11,11 @@
         </div>
         <div class="row veidoArea">
           <div class="col-xs-12 col-sm-12 col-md-12">
-            <video src="//player.bilibili.com/player.html?aid=85576992&cid=146361395&page=1" width="100%" height="">
+            <video width="100%" height="" controls autoplay loop>
+              <source src="../../static/video/home2.webm" type="video/webm" />
+              <source src="../../static/video/home2.mp4" type="video/mp4" />
               您的浏览器不支持Video标签。
             </video>
-            <iframe src="//player.bilibili.com/player.html?aid=85576992&cid=146361395&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:760px;"> </iframe>
-            <!-- <video src="blob:https://www.bilibili.com/7ef8a828-fcd7-4539-99d2-54264dcb69e5" width="100%" height="">
-              <source src="blob:https://www.bilibili.com/7ef8a828-fcd7-4539-99d2-54264dcb69e5" type="video/mp4">
-              <source src="blob:https://www.bilibili.com/7ef8a828-fcd7-4539-99d2-54264dcb69e5" type="video/webm">
-              您的浏览器不支持Video标签。
-            </video> -->
           </div>
         </div>
         <div class="row contentBlock contentBgTwo">
@@ -104,14 +100,70 @@ export default {
   }
 }
 </script>
+
 <style lang="less" scoped>
+@RateG: 0.618;
+
+.Gwh(@width) {
+  width: @width;
+  height: @width * @rateG;
+}
+
+.contentBgTwo {
+  .smallBox {
+    > a {
+      img {
+        display: block;
+        width: 100%;
+        height: 350px * @RateG;
+      }
+    }
+  }
+}
 .favorArea {
   img {
+    margin: 15px 0;
     width: 100%;
-    height: 380px;
+    height: 555px * @RateG;
+  }
+  .page-header {
+    h1 {
+      margin-left: 15px;
+    }
   }
 }
 </style>
+
+<style lang="less" scoped>
+/* 移动端适配 媒体查询*/
+@RateG: 0.618;
+
+/* 超小屏幕（手机，小于 768px） */
+@media (min-width: 320px) {
+  .favorArea {
+    img {
+      height: 290px * @RateG;
+    }
+  }
+}
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 768px) {
+  .favorArea {
+    img {
+      height: 555px * @RateG;
+    }
+  }
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 992px) {
+}
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 1200px) {
+}
+</style>
+
 <style>
 * {
   margin: 0;
@@ -133,11 +185,9 @@ b {
 }
 .contentBlock {
   margin: 50px 0;
-  /*padding: 30px 0;*/
   width: 100%;
   height: 450px;
   text-align: center;
-  /*box-sizing: border-box;*/
 }
 .contentBlock p {
   color: #fff;
@@ -147,18 +197,17 @@ b {
 }
 .contentBgTwo {
   background: #ffffff99;
+  height: auto;
 }
 .content-title {
   position: relative;
   top: 50%;
-  /*top:calc(50% - 66px);*/
   font-family: 'Microsoft Yahei';
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   vertical-align: middle;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
-  /*color: #EE5500AA;*/
 }
 .smallBox {
   margin: 30px 0;
